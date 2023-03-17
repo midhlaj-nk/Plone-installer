@@ -90,12 +90,17 @@ user = admin:"$admin_password"" > buildout.cfg
     2)
     sudo apt install cmdtest
          # Get the name for the new Volto directory
+         #install nvm
+         touch ~/.bash_profile
+         curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.3/install.sh | bash
+         source ~/.bash_profile
+         nvm --version
     volto_dir_name=$(zenity --entry \
         --title="Plone Installer" \
         --width=640 --height=500 \
         --text="Enter the name for your Volto Directory:" \
         --entry-text="")
-
+     
     # Create the directory
     mkdir "$volto_dir_name"
 
